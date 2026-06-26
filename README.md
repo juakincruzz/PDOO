@@ -1,101 +1,104 @@
-# Prácticas de Programación y Diseño Orientado a Objetos (PDOO)
+# PDOO — Prácticas de Programación y Diseño Orientado a Objetos (Java & Ruby)
 
-## Descripción general
-
-Este repositorio recopila el trabajo práctico realizado en la asignatura **Programación y Diseño Orientado a Objetos (PDOO)**.  
-El objetivo principal ha sido desarrollar una base sólida en el paradigma orientado a objetos, abordando tanto los fundamentos como su aplicación progresiva en distintos contextos.
-
-El contenido está organizado en dos bloques principales según el lenguaje utilizado:
-
-- **Java**
-- **Ruby**
-
-Dentro de cada bloque se incluyen varias prácticas que reflejan una evolución técnica y conceptual, desde ejercicios iniciales hasta desarrollos más estructurados y completos.
+Repositorio de prácticas de **PDOO** centrado en el aprendizaje progresivo de **programación orientada a objetos**, modelado de dominio y aplicación de principios de diseño en distintos contextos de implementación.  
+El proyecto refleja una evolución técnica por iteraciones, priorizando claridad de código, encapsulación y calidad de entrega.
 
 ---
 
-## Estructura del repositorio
+## 🎯 Objetivo del proyecto
 
-- `Java/`  
-  Conjunto de prácticas centradas en el diseño orientado a objetos con un enfoque más estático y fuertemente tipado.
-  
-- `Ruby/`  
-  Conjunto de prácticas orientadas al mismo paradigma, aprovechando la flexibilidad, expresividad y dinamismo del lenguaje.
+Desarrollar y consolidar competencias en diseño e implementación de software orientado a objetos, trabajando de forma incremental sobre:
 
-> Cada carpeta contiene implementaciones incrementales donde se aplican principios de modelado, encapsulación y diseño modular.
-
----
-
-## Objetivos académicos y técnicos
-
-A lo largo de las prácticas, el trabajo se ha enfocado en:
-
-- Comprender y aplicar los **principios de la Programación Orientada a Objetos (POO)**.
-- Diseñar soluciones con una estructura clara basada en **clases, objetos y responsabilidades**.
-- Mejorar la calidad del código mediante una organización progresivamente más mantenible y reutilizable.
-- Comparar la implementación de un mismo enfoque de diseño en dos lenguajes con características distintas.
+- Modelado de clases y responsabilidades.
+- Aplicación de principios OOP (encapsulación, herencia, polimorfismo, abstracción).
+- Diseño modular y mantenible.
+- Implementación y comparación de soluciones en **Java** y **Ruby**.
+- Mejora iterativa basada en feedback académico.
 
 ---
 
-## Técnicas y conceptos aplicados
+## 🧩 Stack técnico
 
-Durante el desarrollo de las prácticas se han empleado, entre otras, las siguientes técnicas:
-
-- **Modelado de clases y relaciones**
-  - Identificación de entidades del dominio.
-  - Definición de atributos y comportamientos.
-  - Relación entre objetos mediante asociaciones y colaboración.
-
-- **Encapsulación y abstracción**
-  - Ocultación del estado interno.
-  - Exposición de interfaces claras y coherentes.
-  - Separación entre el “qué” y el “cómo” de cada componente.
-
-- **Modularidad y cohesión**
-  - División de la lógica en componentes con responsabilidades concretas.
-  - Reducción del acoplamiento entre módulos.
-  - Reutilización de código cuando procede.
-
-- **Refactorización progresiva**
-  - Revisión de diseños iniciales.
-  - Simplificación de estructuras.
-  - Mejora de legibilidad, mantenibilidad y claridad semántica.
-
-- **Aplicación práctica del paradigma OO en Java y Ruby**
-  - En **Java**: mayor énfasis en tipado, estructura explícita y diseño formal.
-  - En **Ruby**: mayor agilidad en iteraciones, expresividad y prototipado orientado a objetos.
+- **Lenguajes principales:** Java (66.7%) y Ruby (33.3%)
+- **Paradigma:** Programación Orientada a Objetos
+- **Control de versiones:** Git + GitHub
 
 ---
 
-## Evolución y avance de las prácticas
+## 📁 Estructura del repositorio
 
-Uno de los aspectos más relevantes del repositorio es la **evolución del desarrollo**:
+El repositorio está organizado por prácticas/entregas del curso, con separación por bloques funcionales y/o lenguaje según el enunciado de cada práctica.
 
-1. **Fase inicial**  
-   Se trabajan los fundamentos de la orientación a objetos: definición de clases, atributos y métodos, así como primeros modelos del dominio.
-
-2. **Fase intermedia**  
-   Se incrementa la complejidad de las prácticas, incorporando una mejor distribución de responsabilidades, mayor interacción entre objetos y una organización más modular.
-
-3. **Fase de consolidación**  
-   Se afianzan buenas prácticas de diseño, se refinan decisiones arquitectónicas y se prioriza la calidad del código en términos de legibilidad, escalabilidad y mantenibilidad.
-
-Esta progresión permite observar no solo el resultado final, sino también el proceso de aprendizaje y mejora continua en la forma de analizar, diseñar e implementar soluciones orientadas a objetos.
+> Recomendación: mantener esta organización por módulos para facilitar evaluación, mantenimiento y trazabilidad de cambios.
 
 ---
 
-## Valor del repositorio
+## 🚀 Cómo ejecutar el proyecto
 
-Este repositorio representa:
+### Requisitos
 
-- El desarrollo práctico de competencias clave en POO.
-- La comparación real entre dos ecosistemas (Java y Ruby).
-- La evidencia de una evolución técnica basada en iteración, revisión y mejora del diseño.
+- **Java:** JDK 17+ (o la versión requerida por la práctica)
+- **Ruby:** Ruby 3.x (o versión compatible indicada en cada práctica)
+- Git instalado
 
-En conjunto, constituye una base sólida para abordar proyectos orientados a objetos con mayor criterio técnico y madurez en las decisiones de diseño.
+### 1) Clonar el repositorio
+
+```bash
+git clone https://github.com/juakincruzz/PDOO.git
+cd PDOO
+```
+
+### 2) Ejecutar prácticas en Java (genérico)
+
+```bash
+# Compilar (ejemplo)
+javac -d out $(find . -name "*.java")
+
+# Ejecutar (ejemplo, ajusta el paquete/clase principal)
+java -cp out paquete.Main
+```
+
+### 3) Ejecutar prácticas en Ruby (genérico)
+
+```bash
+ruby ruta/al/script_principal.rb
+```
+
+> Nota: algunos módulos pueden tener estructura o punto de entrada propio. Revisa el código de cada práctica para el comando exacto.
 
 ---
 
-## Autor
+## 💡 Enfoque de desarrollo
 
-**Joaquín Cruz Lorenzo**
+Durante el desarrollo de estas prácticas se ha priorizado:
+
+- **Claridad y legibilidad:** código fácil de revisar y mantener.
+- **Diseño orientado a responsabilidades:** clases cohesionadas y bajo acoplamiento.
+- **Evolución incremental:** mejoras continuas entre prácticas.
+- **Consistencia técnica:** convenciones de nombres, estructura y estilo alineadas.
+- **Aprendizaje comparativo:** uso de Java y Ruby para reforzar conceptos de diseño.
+
+---
+
+## ✅ Resultados de aprendizaje
+
+Este repositorio evidencia capacidad para:
+
+- Diseñar modelos orientados a objetos sólidos.
+- Implementar soluciones modulares y escalables.
+- Traducir conceptos de diseño a código ejecutable en más de un lenguaje.
+- Entregar prácticas funcionales con enfoque académico y técnico.
+
+---
+
+## 👤 Autor
+
+**Joaquín Cruz Lorenzo**  
+GitHub: [@juakincruzz](https://github.com/juakincruzz)
+
+---
+
+## 📄 Licencia
+
+Actualmente este repositorio no define una licencia explícita.  
+Si necesitas reutilizar contenido, te recomiendo contactar previamente con el autor.
