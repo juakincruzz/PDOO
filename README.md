@@ -1,104 +1,221 @@
-# PDOO — Prácticas de Programación y Diseño Orientado a Objetos (Java & Ruby)
+# PDOO - Programación y Diseño Orientado a Objetos
 
-Repositorio de prácticas de **PDOO** centrado en el aprendizaje progresivo de **programación orientada a objetos**, modelado de dominio y aplicación de principios de diseño en distintos contextos de implementación.  
-El proyecto refleja una evolución técnica por iteraciones, priorizando claridad de código, encapsulación y calidad de entrega.
+![Java](https://img.shields.io/badge/Java-OOP-blue)
+![Ruby](https://img.shields.io/badge/Ruby-OOP-red)
+![Swing](https://img.shields.io/badge/UI-Swing-lightgrey)
+![MVC](https://img.shields.io/badge/Architecture-MVC-green)
 
----
+Repositorio de prácticas de la asignatura **Programación y Diseño Orientado a Objetos**.
 
-## 🎯 Objetivo del proyecto
-
-Desarrollar y consolidar competencias en diseño e implementación de software orientado a objetos, trabajando de forma incremental sobre:
-
-- Modelado de clases y responsabilidades.
-- Aplicación de principios OOP (encapsulación, herencia, polimorfismo, abstracción).
-- Diseño modular y mantenible.
-- Implementación y comparación de soluciones en **Java** y **Ruby**.
-- Mejora iterativa basada en feedback académico.
+El proyecto principal es **Irrgarten**, un juego de laberinto desarrollado de forma incremental en **Java** y parcialmente en **Ruby**, aplicando conceptos de programación orientada a objetos, diseño modular, herencia, polimorfismo, interfaces y separación entre modelo, vista y controlador.
 
 ---
 
-## 🧩 Stack técnico
+## Descripción
 
-- **Lenguajes principales:** Java (66.7%) y Ruby (33.3%)
-- **Paradigma:** Programación Orientada a Objetos
-- **Control de versiones:** Git + GitHub
+**Irrgarten** es un juego de laberinto en el que uno o varios jugadores se desplazan por un tablero, se enfrentan a monstruos, reciben recompensas y tratan de alcanzar la casilla de salida.
 
----
-
-## 📁 Estructura del repositorio
-
-El repositorio está organizado por prácticas/entregas del curso, con separación por bloques funcionales y/o lenguaje según el enunciado de cada práctica.
-
-> Recomendación: mantener esta organización por módulos para facilitar evaluación, mantenimiento y trazabilidad de cambios.
+El desarrollo se organiza en varias prácticas progresivas. Cada una introduce nuevos elementos del diseño orientado a objetos, partiendo de clases simples y evolucionando hacia una aplicación más completa con lógica de juego, combate, herencia, polimorfismo e interfaz gráfica.
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+## Tecnologías utilizadas
 
-### Requisitos
+- Java
+- Ruby
+- Swing
+- NetBeans
+- Git y GitHub
 
-- **Java:** JDK 17+ (o la versión requerida por la práctica)
-- **Ruby:** Ruby 3.x (o versión compatible indicada en cada práctica)
-- Git instalado
+---
 
-### 1) Clonar el repositorio
+## Conceptos trabajados
 
-```bash
-git clone https://github.com/juakincruzz/PDOO.git
-cd PDOO
+- Clases y objetos
+- Encapsulación
+- Constructores y constructores de copia
+- Herencia
+- Polimorfismo
+- Clases abstractas
+- Interfaces
+- Enumerados
+- Colecciones
+- Composición de objetos
+- Separación modelo-vista-controlador
+- Interfaz gráfica con Swing
+- Traducción de diseño entre Java y Ruby
+
+---
+
+## Proyecto principal: Irrgarten
+
+El juego se estructura alrededor de varias entidades principales:
+
+| Clase / componente | Responsabilidad |
+|---|---|
+| `Game` | Núcleo del juego: gestiona turnos, jugadores, monstruos, combate, recompensas y finalización de la partida. |
+| `Labyrinth` | Representa el tablero, la salida, obstáculos, jugadores, monstruos y movimientos válidos. |
+| `Player` | Representa a los jugadores, sus atributos, armas, escudos, movimiento, ataque, defensa y recompensas. |
+| `Monster` | Representa a los enemigos del laberinto y su comportamiento en combate. |
+| `LabyrinthCharacter` | Clase base abstracta para personajes del laberinto. |
+| `FuzzyPlayer` | Variante polimórfica de `Player`, usada tras la resurrección del jugador. |
+| `Weapon` / `Shield` | Objetos equipables que modifican ataque y defensa. |
+| `CardDeck` | Estructura base para barajas de armas y escudos. |
+| `GameState` | Objeto de transferencia con el estado observable del juego. |
+| `Controller` | Coordina la interacción entre el modelo y la interfaz. |
+| `UI`, `TextUI`, `GraphicalUI` | Interfaces de usuario textual y gráfica. |
+
+---
+
+## Arquitectura
+
+La versión final aplica una estructura cercana al patrón **Modelo-Vista-Controlador**:
+
+```text
+Modelo        -> Game, Labyrinth, Player, Monster, Weapon, Shield...
+Vista         -> UI, TextUI, GraphicalUI, Cursors
+Controlador   -> Controller
+Punto entrada -> Main
 ```
 
-### 2) Ejecutar prácticas en Java (genérico)
+El programa principal crea el modelo del juego, la interfaz gráfica y el controlador. A partir de ahí, el controlador dirige la ejecución de la partida, solicitando movimientos al usuario y actualizando la vista con el estado del juego.
 
-```bash
-# Compilar (ejemplo)
-javac -d out $(find . -name "*.java")
+---
 
-# Ejecutar (ejemplo, ajusta el paquete/clase principal)
-java -cp out paquete.Main
+## Estructura del repositorio
+
+```text
+PDOO/
+├── PracticasPDOOJava/
+│   ├── Practica0_Java/
+│   ├── Practica1_Java/
+│   ├── Practica2_Java/
+│   ├── Practica3_Java/
+│   ├── Practica4_Java/
+│   └── Practica5_Java/
+│
+├── PracticasPDOORuby/
+│   └── Practica4_Ruby/
+│
+└── README.md
 ```
 
-### 3) Ejecutar prácticas en Ruby (genérico)
+---
 
-```bash
-ruby ruta/al/script_principal.rb
+## Evolución por prácticas
+
+| Práctica | Lenguaje | Contenido principal |
+|---|---|---|
+| Práctica 0 | Java | Introducción al entorno de trabajo y primeras clases. |
+| Práctica 1 | Java | Clases básicas del juego, enumerados, dados, armas, escudos y estado del juego. |
+| Práctica 2 | Java | Ampliación del modelo con personajes, jugadores, monstruos y lógica inicial del laberinto. |
+| Práctica 3 | Java | Implementación del flujo principal del juego: movimiento, combate, turnos, recompensas y logs. |
+| Práctica 4 | Java / Ruby | Introducción de herencia, clase base de personajes y adaptación de parte del diseño a Ruby. |
+| Práctica 5 | Java | Versión más completa con controlador, interfaz gráfica Swing y ejecución integrada del juego. |
+
+---
+
+## Detalles de implementación
+
+### Gestión del juego
+
+La clase `Game` centraliza la lógica principal:
+
+- Creación de jugadores.
+- Creación del laberinto.
+- Colocación de monstruos.
+- Gestión del jugador actual.
+- Ejecución de turnos.
+- Resolución de combates.
+- Recompensas al jugador.
+- Resurrección y conversión a `FuzzyPlayer`.
+- Registro de eventos mediante logs.
+
+### Laberinto
+
+La clase `Labyrinth` representa el tablero mediante estructuras paralelas para:
+
+- Celdas del laberinto.
+- Jugadores.
+- Monstruos.
+
+También gestiona la salida, obstáculos, posiciones aleatorias, movimientos válidos y colocación de entidades.
+
+### Jugadores y combate
+
+`Player` hereda de `LabyrinthCharacter` y añade lógica específica de jugador:
+
+- Armas y escudos equipados.
+- Cálculo de ataque.
+- Cálculo de defensa.
+- Gestión de impactos consecutivos.
+- Recepción de recompensas.
+- Eliminación de equipo agotado.
+- Resurrección.
+
+`FuzzyPlayer` extiende `Player` y modifica el comportamiento de movimiento y ataque, mostrando el uso de polimorfismo en la práctica.
+
+### Interfaz
+
+La versión final incluye una interfaz gráfica basada en **Swing**. La clase `GraphicalUI` implementa la interfaz `UI`, muestra el estado del laberinto, jugadores, monstruos y log, y solicita al usuario el siguiente movimiento mediante una ventana de cursores.
+
+---
+
+## Ruby
+
+El repositorio incluye también una implementación parcial en Ruby dentro de `PracticasPDOORuby`.
+
+Esta parte reproduce elementos importantes del diseño orientado a objetos usado en Java, como:
+
+- Módulo `Irrgarten`.
+- Clase `LabyrinthCharacter`.
+- Clase `Player`.
+- Herencia.
+- Métodos protegidos.
+- Copia de objetos.
+- Armas y escudos.
+- Lógica de ataque, defensa y recompensas.
+
+La versión Ruby sirve para comparar cómo se expresan los mismos conceptos de orientación a objetos en un lenguaje con una filosofía diferente a Java.
+
+---
+
+## Ejecución
+
+La versión Java está organizada como proyectos de NetBeans.
+
+Para ejecutar la versión final:
+
+1. Abrir `PracticasPDOOJava/Practica5_Java` en NetBeans.
+2. Compilar el proyecto.
+3. Ejecutar la clase principal:
+
+```text
+irrgarten.main.Main
 ```
 
-> Nota: algunos módulos pueden tener estructura o punto de entrada propio. Revisa el código de cada práctica para el comando exacto.
+La clase `Main` crea una instancia de `Game`, inicializa la interfaz `GraphicalUI`, construye el `Controller` y comienza la partida.
 
 ---
 
-## 💡 Enfoque de desarrollo
+## Aprendizajes principales
 
-Durante el desarrollo de estas prácticas se ha priorizado:
+Este proyecto permite practicar de forma progresiva los fundamentos de la programación orientada a objetos mediante un caso práctico completo.
 
-- **Claridad y legibilidad:** código fácil de revisar y mantener.
-- **Diseño orientado a responsabilidades:** clases cohesionadas y bajo acoplamiento.
-- **Evolución incremental:** mejoras continuas entre prácticas.
-- **Consistencia técnica:** convenciones de nombres, estructura y estilo alineadas.
-- **Aprendizaje comparativo:** uso de Java y Ruby para reforzar conceptos de diseño.
+Los aspectos más importantes trabajados son:
 
----
-
-## ✅ Resultados de aprendizaje
-
-Este repositorio evidencia capacidad para:
-
-- Diseñar modelos orientados a objetos sólidos.
-- Implementar soluciones modulares y escalables.
-- Traducir conceptos de diseño a código ejecutable en más de un lenguaje.
-- Entregar prácticas funcionales con enfoque académico y técnico.
+- Diseñar clases con responsabilidades claras.
+- Separar la lógica del juego de la interfaz.
+- Reutilizar código mediante herencia.
+- Usar polimorfismo para modificar comportamientos sin cambiar el flujo principal.
+- Encapsular el estado interno de los objetos.
+- Gestionar colecciones de objetos relacionados.
+- Traducir diseños entre Java y Ruby.
+- Construir una aplicación interactiva a partir de un modelo orientado a objetos.
 
 ---
 
-## 👤 Autor
+## Autor
 
 **Joaquín Cruz Lorenzo**  
 GitHub: [@juakincruzz](https://github.com/juakincruzz)
-
----
-
-## 📄 Licencia
-
-Actualmente este repositorio no define una licencia explícita.  
-Si necesitas reutilizar contenido, te recomiendo contactar previamente con el autor.
