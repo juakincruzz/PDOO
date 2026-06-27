@@ -7,7 +7,7 @@
 
 Repositorio de prácticas de la asignatura **Programación y Diseño Orientado a Objetos**.
 
-El proyecto principal es **Irrgarten**, un juego de laberinto desarrollado de forma incremental en **Java** y parcialmente en **Ruby**, aplicando conceptos de programación orientada a objetos, diseño modular, herencia, polimorfismo, interfaces y separación entre modelo, vista y controlador.
+El proyecto principal es **Irrgarten**, un juego de laberinto desarrollado de forma incremental en **Java** y **Ruby**, aplicando conceptos de programación orientada a objetos, diseño modular, herencia, polimorfismo, interfaces y separación entre modelo, vista y controlador.
 
 ---
 
@@ -16,6 +16,11 @@ El proyecto principal es **Irrgarten**, un juego de laberinto desarrollado de fo
 **Irrgarten** es un juego de laberinto en el que uno o varios jugadores se desplazan por un tablero, se enfrentan a monstruos, reciben recompensas y tratan de alcanzar la casilla de salida.
 
 El desarrollo se organiza en varias prácticas progresivas. Cada una introduce nuevos elementos del diseño orientado a objetos, partiendo de clases simples y evolucionando hacia una aplicación más completa con lógica de juego, combate, herencia, polimorfismo e interfaz gráfica.
+
+El repositorio contiene dos líneas de implementación:
+
+- **Java**, con prácticas desde `Practica0_Java` hasta `Practica5_Java`.
+- **Ruby**, con prácticas desde `Practica0_Ruby` hasta `Practica4_Ruby`.
 
 ---
 
@@ -69,7 +74,7 @@ El juego se estructura alrededor de varias entidades principales:
 
 ## Arquitectura
 
-La versión final aplica una estructura cercana al patrón **Modelo-Vista-Controlador**:
+La versión final en Java aplica una estructura cercana al patrón **Modelo-Vista-Controlador**:
 
 ```text
 Modelo        -> Game, Labyrinth, Player, Monster, Weapon, Shield...
@@ -95,6 +100,10 @@ PDOO/
 │   └── Practica5_Java/
 │
 ├── PracticasPDOORuby/
+│   ├── Practica0_Ruby/practicadeprueba/
+│   ├── Practica1_Ruby/
+│   ├── Practica2_Ruby/
+│   ├── Practica3_Ruby/
 │   └── Practica4_Ruby/
 │
 └── README.md
@@ -104,14 +113,14 @@ PDOO/
 
 ## Evolución por prácticas
 
-| Práctica | Lenguaje | Contenido principal |
-|---|---|---|
-| Práctica 0 | Java | Introducción al entorno de trabajo y primeras clases. |
-| Práctica 1 | Java | Clases básicas del juego, enumerados, dados, armas, escudos y estado del juego. |
-| Práctica 2 | Java | Ampliación del modelo con personajes, jugadores, monstruos y lógica inicial del laberinto. |
-| Práctica 3 | Java | Implementación del flujo principal del juego: movimiento, combate, turnos, recompensas y logs. |
-| Práctica 4 | Java / Ruby | Introducción de herencia, clase base de personajes y adaptación de parte del diseño a Ruby. |
-| Práctica 5 | Java | Versión más completa con controlador, interfaz gráfica Swing y ejecución integrada del juego. |
+| Práctica | Java | Ruby | Contenido principal |
+|---|---|---|---|
+| Práctica 0 | Sí | Sí | Introducción al entorno de trabajo y primeras pruebas. |
+| Práctica 1 | Sí | Sí | Clases básicas del juego, enumerados, dados, armas, escudos y estado del juego. |
+| Práctica 2 | Sí | Sí | Ampliación del modelo con personajes, jugadores, monstruos y lógica inicial del laberinto. |
+| Práctica 3 | Sí | Sí | Implementación del flujo principal del juego: movimiento, combate, turnos, recompensas y logs. |
+| Práctica 4 | Sí | Sí | Herencia, clase base de personajes, copia de objetos, polimorfismo y versión Ruby más completa. |
+| Práctica 5 | Sí | No | Versión final en Java con controlador, interfaz gráfica Swing y ejecución integrada del juego. |
 
 ---
 
@@ -157,30 +166,32 @@ También gestiona la salida, obstáculos, posiciones aleatorias, movimientos vá
 
 ### Interfaz
 
-La versión final incluye una interfaz gráfica basada en **Swing**. La clase `GraphicalUI` implementa la interfaz `UI`, muestra el estado del laberinto, jugadores, monstruos y log, y solicita al usuario el siguiente movimiento mediante una ventana de cursores.
+La versión final en Java incluye una interfaz gráfica basada en **Swing**. La clase `GraphicalUI` implementa la interfaz `UI`, muestra el estado del laberinto, jugadores, monstruos y log, y solicita al usuario el siguiente movimiento mediante una ventana de cursores.
 
 ---
 
-## Ruby
+## Implementación en Ruby
 
-El repositorio incluye también una implementación parcial en Ruby dentro de `PracticasPDOORuby`.
+Además de la versión Java, el repositorio incluye una línea completa de prácticas en Ruby dentro de `PracticasPDOORuby`, desde `Practica0_Ruby` hasta `Practica4_Ruby`.
 
-Esta parte reproduce elementos importantes del diseño orientado a objetos usado en Java, como:
+Esta parte reproduce progresivamente los conceptos de orientación a objetos trabajados en Java, adaptándolos a la sintaxis y filosofía de Ruby:
 
 - Módulo `Irrgarten`.
-- Clase `LabyrinthCharacter`.
-- Clase `Player`.
-- Herencia.
-- Métodos protegidos.
-- Copia de objetos.
-- Armas y escudos.
-- Lógica de ataque, defensa y recompensas.
+- Clases para jugadores, monstruos, armas, escudos, dados y laberinto.
+- Uso de `attr_reader` y métodos protegidos.
+- Herencia entre `LabyrinthCharacter`, `Player` y variantes especializadas.
+- Copia de objetos mediante métodos propios.
+- Gestión de armas y escudos.
+- Lógica de ataque, defensa, daño, resurrección y recompensas.
+- Organización del código mediante `require_relative`.
 
-La versión Ruby sirve para comparar cómo se expresan los mismos conceptos de orientación a objetos en un lenguaje con una filosofía diferente a Java.
+La parte Ruby permite comparar cómo se implementa el mismo diseño orientado a objetos en un lenguaje dinámico frente a Java.
 
 ---
 
 ## Ejecución
+
+### Java
 
 La versión Java está organizada como proyectos de NetBeans.
 
@@ -195,6 +206,16 @@ irrgarten.main.Main
 ```
 
 La clase `Main` crea una instancia de `Game`, inicializa la interfaz `GraphicalUI`, construye el `Controller` y comienza la partida.
+
+### Ruby
+
+Las prácticas Ruby se encuentran en:
+
+```text
+PracticasPDOORuby/
+```
+
+Cada práctica tiene su propia estructura y archivos de prueba. Para ejecutarlas, entra en la carpeta correspondiente y lanza el archivo principal o de prueba indicado en esa práctica.
 
 ---
 
@@ -211,6 +232,7 @@ Los aspectos más importantes trabajados son:
 - Encapsular el estado interno de los objetos.
 - Gestionar colecciones de objetos relacionados.
 - Traducir diseños entre Java y Ruby.
+- Comparar la implementación de un mismo modelo en un lenguaje estático y en uno dinámico.
 - Construir una aplicación interactiva a partir de un modelo orientado a objetos.
 
 ---
